@@ -1,0 +1,25 @@
+{{ partial "header.html" . }}
+
+<script type="text/javascript">
+  document.title = "Page NOT Found";
+</script>
+
+<div class="header">
+  <h1>Page NOT Found</h1>
+</div>
+
+<div class="content">
+  <p>This page mysteriously disappeared. So uhm… I only see 3 options for you:</p>  
+  <ol>
+    <li>Check the URL you entered in the address bar and correct it if necessary.</li>
+    <li><a id="tweeterror" href="https://twitter.com/intent/tweet?text=%40{{ .Site.Author.twitter }}%20This%20page%20on%20your%20website%20seems%20to%20be%20missing%3A" target="_blank">Tweet</a> or <a id="mailerror" href="mailto:{{ .Site.Author.email }}?subject=404%20on%20website&body=This%20page%20on%20your%20website%20seems%20to%20be%20missing%3A%20">email</a> me to let me know this link doesn’t work (anymore).</li>
+    <li>Get a jetpack and take off.</li>
+  </ol>
+  {{ if .Site.Params.img404 }}
+  <p style="text-align: center;">
+    <img style="width: 200px; padding-left: 30px;" src="{{ .Site.Params.img404 }}" alt="jetpack"/>
+  </p>
+  {{ end }}
+</div>
+
+{{ partial "footer.html" . }}
