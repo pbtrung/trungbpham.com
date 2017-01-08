@@ -1,3 +1,7 @@
+#dsq-subscribe a {
+  display: none !important;
+}
+
 .header {
   font-family: "Raleway", Helvetica, Arial, sans-serif
 }
