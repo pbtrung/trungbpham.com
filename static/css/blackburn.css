@@ -47,6 +47,10 @@ article > footer {
   overflow: hidden;
 }
 
+.disqus_thread {
+  padding-top: 1em;
+}
+
 #menu .brand {
   font-family: Raleway;
   font-weight: bold;
