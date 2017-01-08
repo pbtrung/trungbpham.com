@@ -11,6 +11,9 @@ paginate = 10
   tag = "tags"
   topic = "topics"
 
+[permalinks]
+  post = "/:year/:month/:title/"
+
 [params]
   # Shown in the home page
   subtitle = "Idealist / Researcher / Developer / Introvert"
