@@ -8,7 +8,7 @@
   <div class="pure-u-10-24">
     {{ if .PrevInSection }}
     <nav class="prev">
-      <a href="{{ .PrevInSection.Permalink }}">{{ .PrevInSection.Title }}</a>
+      <a href="{{ .PrevInSection.Permalink }}">&nbsp;{{ .PrevInSection.Title }}</a>
     </nav>
     {{ end }}
   </div>
@@ -18,7 +18,7 @@
   <div class="pure-u-10-24">
     {{ if .NextInSection }}
     <nav class="next">
-      <a href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }}</a>
+      <a href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }}&nbsp;</a>
     </nav>
     {{ end }}
   </div>
