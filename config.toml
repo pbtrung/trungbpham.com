@@ -1,0 +1,50 @@
+baseurl = "https://www.trungbpham.com/"
+languageCode = "en-us"
+title = "Trung B. Pham"
+theme = "blackburn"
+author = "Trung B. Pham"
+copyright = "&copy; 2017. All rights reserved."
+canonifyurls = true
+paginate = 10
+
+[indexes]
+  tag = "tags"
+  topic = "topics"
+
+[params]
+  # Shown in the home page
+  subtitle = "Idealist / Researcher / Developer / Introvert"
+  brand = "Trung B. Pham"
+  googleAnalytics = "UA-89506159-1"
+  disqus = "trungs-blog"
+  # CSS name for highlight.js
+  highlightjs = "androidstudio"
+  dateFormat = "02 Jan 2006, 15:04"
+
+[menu]
+  # Shown in the side menu.
+  [[menu.main]]
+    name = "Home"
+    pre = "<i class='fa fa-home fa-fw'></i>"
+    weight = 0
+    identifier = "home"
+    url = "/"
+  [[menu.main]]
+    name = "All Posts"
+    pre = "<i class='fa fa-list fa-fw'></i>"
+    weight = 1
+    identifier = "post"
+    url = "/post/"
+  [[menu.main]]
+    name = "About Me"
+    pre = "<i class='fa fa-user fa-fw'></i>"
+    weight = 2
+    identifier = "about"
+    url = "/about/"
+
+[social]
+  # Link your social networking accouns to the side menu
+  # by entering your username or ID.
+  github = "pbtrung"
+  linkedin = "trung-pham-39986074"
+  twitter = "pbtrung"
