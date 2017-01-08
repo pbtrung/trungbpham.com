@@ -75,6 +75,10 @@ input:focus {
   outline: none;
 }
 
+.gsc-adBlock {
+  display: none !important;
+}
+
 #menu .brand {
   font-family: Raleway;
   font-weight: bold;
