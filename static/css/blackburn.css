@@ -1,3 +1,7 @@
+li.install.disqus-footer__item {
+  display: none;
+}
+
 .header {
   font-family: "Raleway", Helvetica, Arial, sans-serif
 }
