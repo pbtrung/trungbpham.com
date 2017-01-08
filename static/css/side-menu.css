@@ -1,3 +1,7 @@
+.privacy, .disqus-footer__logo {
+  display: none;
+}
+
 body {
     color: #777;
 }
