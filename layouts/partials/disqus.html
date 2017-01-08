@@ -14,8 +14,17 @@
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 })();
 
-$('iframe .privacy').css('display','none');
-$('#dsq-app4').contents().find('.privacy').hide();
+$(document).ready(function(){
+	$('iframe .privacy').css('display','none');
+	$('#dsq-app4').contents().find('.privacy').hide();
+	$('.dsq-app4').contents().find('.privacy').hide();
+	$('#dsq-app1').contents().find('.privacy').hide();
+	$('.dsq-app1').contents().find('.privacy').hide();
+	$('#dsq-app').contents().find('.privacy').hide();
+	$('.dsq-app').contents().find('.privacy').hide();
+	$('#dsq-frame').contents().find('.privacy').hide();
+	$('.dsq-frame').contents().find('.privacy').hide();
+});
 
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
