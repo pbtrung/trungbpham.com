@@ -51,12 +51,24 @@ article > footer {
   padding-top: 1em;
 }
 
+.search-form {
+  padding-bottom: 0.6em;
+}
+
 .search-input {
   border: none;
   background-color: #191818;
-  padding-left: 0.5em;
-  margin-top: 1em;
-  width: 80%;
+  width: 70%;
+  padding: 0 0 0 0;
+}
+
+.search-icon {
+  margin: 0 0 0 0;
+  padding-left: 0.6em;
+}
+
+#menu .pure-menu ul.search-container {
+  border-top: 0;
 }
 
 input:focus {
