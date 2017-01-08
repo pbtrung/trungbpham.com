@@ -16,7 +16,7 @@ paginate = 10
 
 [params]
   # Shown in the home page
-  subtitle = "Idealist / Researcher / Developer / Introvert"
+  subtitle = "Idealist / Researcher / Engineer / Developer"
   brand = "Trung B. Pham"
   googleAnalytics = "UA-89506159-1"
   disqus = "trungs-blog"
