@@ -1,0 +1,9 @@
+{{ with .Site.Params.brand }}
+  <a class="pure-menu-heading brand" href="/">{{ . | safeHTML }}</a>
+{{ end }}
+
+{{ if .Site.Params.google_cse }}
+  <form class="search-form" action="{{ .Site.BaseURL }}search">
+    <span class="fa fa-search search-icon"></span>
+  <input type="search" class="search-input" name="q" id="q" autocomplete="off" required placeholder="Search">
+{{ end }}

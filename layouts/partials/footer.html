@@ -1,0 +1,12 @@
+</div>
+</div>
+<script src="{{ .Site.BaseURL }}js/ui.js"></script>
+
+{{ partial "google_analytics.html" . }}
+
+{{ if .Site.Params.google_cse }}
+	{{ partial "google_cse.html" . }}
+{{ end }}
+
+</body>
+</html>
