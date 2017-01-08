@@ -79,6 +79,10 @@ input:focus {
   display: none !important;
 }
 
+.gsc-control-cse {
+  padding: 0 0 0 0;
+}
+
 #menu .brand {
   font-family: Raleway;
   font-weight: bold;
