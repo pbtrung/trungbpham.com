@@ -29,8 +29,8 @@ article > footer {
 
 .prev-next-post {
   margin-top: 2em;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
