@@ -47,7 +47,7 @@ article > footer {
   overflow: hidden;
 }
 
-.disqus_thread {
+#disqus_thread {
   padding-top: 1em;
 }
 
