@@ -22,15 +22,35 @@
       $.getJSON(
         'http://tapirgo.com/api/1/search.json?token=' + settings.token + '&query=' + paramValue(settings.query_param) + '&callback=?', function(data){
           if(settings['complete']) { settings.complete() }
-          $.each(data, function(key, val) {
-            el.append('<div class="result"><h3><a href="' + val.link + '">' + val.title + '</a></h3><p>' + val.summary + '</p></div>');
-          });
+
+          if(jQuery.isEmptyObject(data)) {
+            el.append('<div class="nothing-found"><h3>No result found. Please click on <a href="/">this link</a> to return to home page or use different search term(s).\
+                       <br/>Thank you for visiting my blog <i class="fa fa-smile-o fa-lg" aria-hidden="true"></i><h3></div>');
+          } else {
+            el.append(data.length + ' Result(s) Found.<br/><br/>');
+            $.each(data, function(key, val) {
+              var str = '<div class="result"><h2 class="search-title"><a href="' + val.link + '">' + val.title + '</a></h2>';
+              str += '<p class="search-link"><a href="' + val.link + '">' + val.link + '</a></p>';
+              str += '<p class="search-summary">' + truncate(val.summary) + '</p>';
+              str += '</div>';
+              str += '<br/>';
+              el.append(str);
+            });
+          }
         }
       );
 
       return this;
     }
   };
+
+  function truncate(title) {
+    var length = 100;
+    if (title.length > length) {
+       title = title.substring(0, length) + ' ...';
+    }
+    return title;
+  }
 
   // Extract the param value from the URL.
   function paramValue(query_param) {
@@ -48,4 +68,4 @@
     }
   };
 
-})( jQuery );
+})(jQuery);
