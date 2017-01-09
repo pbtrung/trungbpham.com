@@ -1,0 +1,18 @@
+<div class="pure-menu">
+  <ul class="pure-menu-list search-container">
+  	<li class="pure-menu-item">
+  	  {{ if .Site.Params.google_cse }}
+	  <form class="search-form" action="{{ .Site.BaseURL }}search-cse">
+	    <i class="fa fa-search fa-fw search-icon"></i>
+	    <input type="search" class="search-input" name="q" id="q" autocomplete="off" required placeholder="Search">
+	  </form>
+	  {{ end }}
+	  {{ if .Site.Params.tapir_token }}
+	  <form class="search-form" action="{{ .Site.BaseURL }}search-tapir">
+	    <i class="fa fa-search fa-fw search-icon"></i>
+	    <input type="search" class="search-input" name="q" id="q" autocomplete="off" required placeholder="Search">
+	  </form>
+	  {{ end }}
+	</li>
+  </ul>
+</div>

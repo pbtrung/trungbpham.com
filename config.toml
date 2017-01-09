@@ -24,7 +24,8 @@ paginate = 10
   highlightjs = "androidstudio"
   dateFormat = "02 Jan 2006, 15:04"
   img404 = "/images/404.png"
-  google_cse = "004229918939555342365:f6qlr4aox4u"
+  # google_cse = "004229918939555342365:f6qlr4aox4u"
+  tapir_token = "5873fca014ad666855a3c423"
 
 [menu]
   # Shown in the side menu.

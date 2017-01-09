@@ -1,0 +1,24 @@
+{{ partial "header.html" . }}
+
+<script type="text/javascript">
+  document.title = "Search Result(s)";
+</script>
+
+<div class="header">
+  <h1>Search Result(s) AAA</h1>
+</div>
+
+<div class="content">
+  <div id="search_results"></div>  
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/jquery-tapir.js"></script>
+  <script>
+    $('#search_results').tapir({'token': '{{ .Site.Params.tapir_token }}'});
+    $.getJSON('http://www.tapirgo.com/api/1/search.json?token=5873fca014ad666855a3c423&query=about', function(data) {
+      console.log(data);
+    });
+</script>
+
+{{ partial "footer.html" . }}

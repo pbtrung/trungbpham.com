@@ -7,8 +7,8 @@
 
   {{ partial "brand.html" . }}
 
-  {{ if .Site.Params.google_cse }}
-    {{ partial "search_form_cse.html" . }}
+  {{ if or .Site.Params.google_cse .Site.Params.tapir_token }}
+    {{ partial "search_form.html" . }}
   {{ end }}
 
   <div class="pure-menu">
