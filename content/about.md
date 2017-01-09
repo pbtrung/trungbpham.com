@@ -7,7 +7,7 @@ comments = false
 Hi there! My name is Trung Bao Pham. I am:
 
 - A husband.
-- A father of a never-stay-still, wonderful kid.
+- A father of an always-busy, wonderful kid.
 - A researcher in mechanical engineering.
 - An open source software developer and advocate.
 - A long-time user of [Arch Linux](https://www.archlinux.org).
