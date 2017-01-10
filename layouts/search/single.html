@@ -1,0 +1,23 @@
+{{ partial "header.html" . }}
+
+<div class="header">
+  <h1>{{ .Title }}</h1>
+</div>
+<div class="content">
+  {{ if .Site.Params.google_cse }}
+	  A lot of ad/tracker blockers like Ghostery are blocking Google Custom Search Engine. Allow <i>Google AJAX Search API</i> to show your search results.
+	  <gcse:searchresults-only linktarget="_parent"></gcse:searchresults-only>
+  {{ end }}
+
+  {{ if .Site.Params.tapir_token }}
+	  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	  <script type="text/javascript" src="/js/jquery-tapir.js"></script>
+	  <div id="search-results"></div>
+	  <script type="text/javascript">
+		$('#search-results').tapir({'token': '{{ .Site.Params.tapir_token }}'});
+	  </script>
+	  <noscript><h3>Please enable JavaScript to view search result(s).</h3></noscript>
+  {{ end }}
+</div>
+
+{{ partial "footer.html" . }}
