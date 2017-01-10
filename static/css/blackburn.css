@@ -21,6 +21,11 @@ a:visited {
 .small-print {
   font-size: 0.8em;
   margin: 0.6em;
+  color: #f2f2f2;
+}
+
+.small-print-a {
+  color: #f2f2f2;
 }
 
 .post-meta {
