@@ -75,6 +75,7 @@ article > footer {
 .search-icon {
   margin: 0 0 0 0;
   padding-left: 0.6em;
+  color: #999;
 }
 
 #menu .pure-menu ul.search-container {
