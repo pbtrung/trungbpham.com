@@ -52,20 +52,19 @@ The content `<div>` is where all your content goes.
      color: #333;
      text-align: center;
      padding: 1.7em 2em 0;
-     border-bottom: 1px solid #eee;
- }
-    .header h1 {
-        margin: 0.2em 0;
-        font-size: 2em;
-        font-weight: 300;
-    }
-     .header h2 {
-        font-weight: 300;
-        color: #ccc;
-        padding: 0;
-        margin-top: 0;
-        font-size: 1.5em;
-    }
+}
+.header h1 {
+    margin: 0.2em 0;
+    font-size: 2em;
+    font-weight: 300;
+}
+ .header h2 {
+    font-weight: 300;
+    color: #ccc;
+    padding: 0;
+    margin-top: 0;
+    font-size: 1.5em;
+}
 
 .content-subhead {
     margin: 50px 0 20px 0;
