@@ -1,12 +1,6 @@
 <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    {{ if .RSSLink }}
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="{{ .RSSLink }}"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
-    {{ end }}
-
     <!-- SNS microblogging -->
 
     {{ with .Site.Social.twitter }}
@@ -182,6 +176,12 @@
     {{ with .Site.Social.email }}
     <li class="pure-menu-item">
       <a class="pure-menu-link" href="mailto:{{ . }}"><i class="fa fa-envelope fa-fw"></i>Email</a>
+    </li>
+    {{ end }}
+
+    {{ if .RSSLink }}
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="{{ .RSSLink }}"><i class="fa fa-rss fa-fw"></i>RSS</a>
     </li>
     {{ end }}
 
