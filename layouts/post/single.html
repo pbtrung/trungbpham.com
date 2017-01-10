@@ -9,7 +9,9 @@
 
   {{ partial "post_meta.html" . }}
 
-  {{ .Content }}
+  <div class="content-body">
+  	{{ .Content }}
+  </div>
 
   {{ partial "prev_next_post.html" . }}
 
