@@ -1,5 +1,9 @@
+html {
+  font-family: "Roboto Slab", sans-serif;
+}
+
 .header {
-  font-family: "Raleway", Helvetica, Arial, sans-serif
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
 }
 
 a {
