@@ -21,6 +21,12 @@
 	  </script>
 	  <noscript><h3>Please enable JavaScript to view search result(s).</h3></noscript>
   {{ end }}
+
+  {{ if .Site.Params.search_lunr }}
+  	   <div id="search-results"></div>
+       <script type="text/javascript" src="/js/search-lunr.js"></script>
+       <noscript><h3>Please enable JavaScript to view search result(s).</h3></noscript>
+  {{ end }}
 </div>
 
 {{ partial "footer.html" . }}
