@@ -4,6 +4,14 @@ function paramValue(query_param) {
     return results ? results[1] : false;
 }
 
+function truncate(title) {
+    var length = 100;
+    if (title.length > length) {
+       title = title.substring(0, length) + ' ...';
+    }
+    return title;
+}
+
 $(document).ready(function () {
 
     var searchData;
@@ -31,6 +39,7 @@ $(document).ready(function () {
                 var item = data[result.ref];
                 var str = '<div class="result"><h2 class="search-title"><a href="' + item.href + '">' + item.title + '</a></h2>';
                 str += '<p class="search-link"><a href="' + item.href + '">' + item.href + '</a></p>';
+                str += '<p class="search-summary">' + truncate(item.content) + '</p>';
                 str += '</div>';
                 str += '<br/>';
                 results.innerHTML += str;
