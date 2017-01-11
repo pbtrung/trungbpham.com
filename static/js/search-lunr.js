@@ -1,6 +1,6 @@
 var searchData;
 
-var index = lunr(function() {
+window.index = lunr(function() {
     this.field('objectID');
     this.field('href');
     this.field('title', { boost: 100 });
@@ -18,7 +18,7 @@ searchReq.onload = function() {
         searchData = JSON.parse(this.response);
         searchData.forEach(function(obj, index) {
             obj['id'] = index;
-            index.add(obj);
+            window.index.add(obj);
         });
     } else {
         console.log("Failed status for site-index.json.");
@@ -39,7 +39,7 @@ function lunrSearch(event) {
     var query_param = 'q';
     var query = paramValue(query_param);
     if (query.length > 2) {
-        var matches = index.search(query);
+        var matches = window.index.search(query);
         displayResults(matches);
     }
 }
