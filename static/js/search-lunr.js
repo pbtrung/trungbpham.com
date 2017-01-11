@@ -13,7 +13,6 @@ function truncate(title) {
 }
 
 $(document).ready(function () {
-
     var searchData;
     
     $.getJSON('/site-index.json', function(data) {
