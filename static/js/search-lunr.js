@@ -21,8 +21,8 @@ $(document).ready(function () {
             this.field('content', { boost: 10 });
         });
 
-        data.forEach(function(obj, index) {
-            obj['id'] = index;
+        data.forEach(function(obj, idx) {
+            obj['id'] = idx;
             index.add(obj);
         });
 
