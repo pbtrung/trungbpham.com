@@ -18,6 +18,7 @@ searchReq.onload = function() {
         searchData = JSON.parse(this.response);
         searchData.forEach(function(obj, index) {
             obj['id'] = index;
+            console.log(obj);
             window.index.add(obj);
         });
     } else {
@@ -40,6 +41,7 @@ function lunrSearch() {
     var query = paramValue(query_param);
     if (query.length > 2) {
         var matches = window.index.search(query);
+        console.log(query);
         displayResults(matches);
     }
 }
