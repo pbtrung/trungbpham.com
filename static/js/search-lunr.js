@@ -37,7 +37,7 @@ $(document).ready(function () {
     searchReq.send();
 
     var query_param = 'q';
-    var query = paramValue(query_param);
+    var query = 'hello';
     if (query.length > 2) {
         var matches = window.index.search(query);
         console.log(query);
