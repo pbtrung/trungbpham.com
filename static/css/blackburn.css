@@ -36,10 +36,10 @@ a:visited {
 }
 
 #menu a.small-print-a {
-  color: green;
+  color: #00fff7;
 }
 #menu a.small-print-a:hover {
-  color: blue;
+  color: #00fff7;
 }
 
 .post-meta {
