@@ -24,6 +24,7 @@
 
   {{ if .Site.Params.search_lunr }}
   	   <div id="search-results"></div>
+  	   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/0.7.2/lunr.min.js"></script>
        <script type="text/javascript" src="/js/search-lunr.js"></script>
        <noscript><h3>Please enable JavaScript to view search result(s).</h3></noscript>
   {{ end }}
