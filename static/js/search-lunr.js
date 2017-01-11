@@ -50,7 +50,7 @@ function displayResults(results) {
     var searchResults = document.getElementById('search-results');
     if (results.length) {
         results.forEach(function(result) {
-            var item = searchData[result.ref];
+            var item = window.searchData[result.ref];
             var appendString = item.title + ' ';
             searchResults.innerHTML += appendString;
         });
