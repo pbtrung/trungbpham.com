@@ -7,9 +7,11 @@
 <hr>
 
 <div class="content">
+  <div class="content-body">
   {{ range ( .Paginate (where .Data.Pages "Type" "post")).Pages }}
     {{ .Render "summary"}}
   {{ end }}
+  </div>
 
   {{ partial "pagination.html" . }}
 
