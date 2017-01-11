@@ -26,7 +26,15 @@ $(document).ready(function () {
             index.add(obj);
         });
 
-        console.log(index);
-        console.log(index.search('Hello'));
+        var matches = index.search(paramValue('q'));
+        if (matches.length) {
+            matches.forEach(function(result) {
+                var item = data[result.ref];
+                var appendString = item.title + ' ';
+                results.innerHTML += appendString;
+            });
+        } else {
+            results.innerHTML = 'Nothing';
+        }
     });
 });
