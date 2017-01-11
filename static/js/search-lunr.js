@@ -34,18 +34,6 @@ function paramValue(query_param) {
     return results ? results[1] : false;
 }
 
-function lunrSearch() {
-    var query_param = 'q';
-    var query = paramValue(query_param);
-    if (query.length > 2) {
-        var matches = window.index.search(query);
-        console.log(query);
-        console.log(matches);
-        console.log(window.index);
-        displayResults(matches);
-    }
-}
-
 function displayResults(results) {
     var searchResults = document.getElementById('search-results');
     if (results.length) {
@@ -60,5 +48,13 @@ function displayResults(results) {
 }
 
 $(document).ready(function () {
-    lunrSearch();
+    var query_param = 'q';
+    var query = paramValue(query_param);
+    if (query.length > 2) {
+        var matches = window.index.search(query);
+        console.log(query);
+        console.log(matches);
+        console.log(window.index);
+        displayResults(matches);
+    }
 });
