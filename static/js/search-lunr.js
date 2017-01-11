@@ -42,6 +42,7 @@ function lunrSearch() {
     if (query.length > 2) {
         var matches = window.index.search(query);
         console.log(query);
+        console.log(matches);
         displayResults(matches);
     }
 }
