@@ -29,11 +29,14 @@ $(document).ready(function () {
             results.innerHTML = matches.length + ' Result(s) Found.<br/><br/>';
             matches.forEach(function(result) {
                 var item = data[result.ref];
-                var appendString = item.title;
-                results.innerHTML += appendString1;
+                var str = '<div class="result"><h2 class="search-title"><a href="' + item.href + '">' + item.title + '</a></h2>';
+                str += '<p class="search-link"><a href="' + item.href + '">' + item.href + '</a></p>';
+                str += '</div>';
+                str += '<br/>';
+                results.innerHTML += str;
             });
         } else {
-            results.innerHTML = '<div class="nothing-found"><h3>No result found. Please click on <a href="/">this link</a> to return to home page or use different search term(s).\
+            results.innerHTML = '<div class="nothing-found"><h3>No result(s) found. Please click on <a href="/">this link</a> to return to home page or use different search term(s).\
                                  <br/>Thank you for visiting my blog <i class="fa fa-smile-o fa-lg" aria-hidden="true"></i><h3></div>';
         }
     });
