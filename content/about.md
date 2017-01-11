@@ -2,9 +2,9 @@
 date = "2017-01-06T01:41:03-08:00"
 title = "About Me"
 comments = false
+type = "about"
 +++
 
-<div class="content-body">
 Hi there! My name is Trung Bao Pham. I am:
 
 - A husband.
@@ -15,4 +15,3 @@ Hi there! My name is Trung Bao Pham. I am:
 
 This blog is about anything that has fascinated me, including but not limited to mathematics, engineering, technology, computer science, programming, social movements, etc.
 Feel free to reach [me@trungbpham.com](mailto:me@trungbpham.com) or drop me a tweet [@pbtrung](https://twitter.com/intent/user?screen_name=pbtrung).
-</div>
