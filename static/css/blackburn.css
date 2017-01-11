@@ -116,7 +116,6 @@ input:focus {
   background: transparent;
   text-decoration: none;
   margin: 0.2em 0;
-  margin-left: -0.1em;
 }
 
 #menu .pure-menu {
