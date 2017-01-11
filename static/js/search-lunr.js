@@ -10,8 +10,6 @@ $(document).ready(function () {
     
     $.getJSON('/site-index.json', function(data) {
         var results = document.getElementById('search-results');
-        results.append(data.length + ' Result(s) Found.');
-
         var index = lunr(function() {
             this.field('id');
             this.field('href');
