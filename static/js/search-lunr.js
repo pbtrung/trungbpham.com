@@ -1,9 +1,9 @@
 var searchData;
 
 window.index = lunr(function() {
+    this.field('id');
     this.field('href');
     this.field('title', { boost: 100 });
-    this.field('description');
     this.field('tags', { boost: 30 });
     this.field('topics', { boost: 30 });
     this.field('content', { boost: 10 });
