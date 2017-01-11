@@ -35,7 +35,7 @@ function paramValue(query_param) {
     return results ? results[1] : false;
 }
 
-function lunrSearch(event) {
+function lunrSearch() {
     var query_param = 'q';
     var query = paramValue(query_param);
     if (query.length > 2) {
@@ -56,3 +56,7 @@ function displayResults(results) {
         searchResults.innerHTML = 'No results found';
     }
 }
+
+$(document).ready(function () {
+    lunrSearch();
+});
