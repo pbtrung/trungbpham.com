@@ -26,11 +26,11 @@ $(document).ready(function () {
 
         var matches = index.search(paramValue('q'));
         if (matches.length) {
-            results.append(matches.length + ' Result(s) Found.<br/><br/>');
+            results.innerHTML = matches.length + ' Result(s) Found.<br/><br/>';
             matches.forEach(function(result) {
                 var item = data[result.ref];
                 var appendString = item.title + ' ';
-                results.append(appendString);
+                results.innerHTML += appendString;
             });
         } else {
             results.innerHTML = 'No result(s) found.';
