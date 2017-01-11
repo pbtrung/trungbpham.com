@@ -1,6 +1,7 @@
 // Extract the param value from the URL.
 function paramValue(query_param) {
     var results = new RegExp('[\\?&]' + query_param + '=([^&#]*)').exec(window.location.href);
+    results = results.split('+').join(' ');
     return results ? results[1] : false;
 }
 
@@ -13,7 +14,6 @@ function truncate(title) {
 }
 
 $(document).ready(function () {
-    var searchData;
     
     $.getJSON('/site-index.json', function(data) {
         var results = document.getElementById('search-results');
@@ -49,4 +49,5 @@ $(document).ready(function () {
                                  <i class="fa fa-smile-o fa-lg" aria-hidden="true"></i><h3></div>';
         }
     });
+
 });
