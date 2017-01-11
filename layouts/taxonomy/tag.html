@@ -6,9 +6,11 @@
 <hr>
 
 <div class="content">
+  <div class="content-body">
   {{ range .Data.Pages }}
     {{ .Render "summary"}}
   {{ end }}
+  </div>
 </div>
 
 {{ partial "footer.html" . }}
