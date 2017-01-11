@@ -8,7 +8,6 @@ window.index = lunr(function() {
     this.field('tags', { boost: 30 });
     this.field('topics', { boost: 30 });
     this.field('content', { boost: 10 });
-    this.ref('objectID');
 });
 var indexLocation = "/site-index.json";
 var searchReq = new XMLHttpRequest();
