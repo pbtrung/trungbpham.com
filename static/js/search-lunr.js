@@ -20,5 +20,12 @@ $(document).ready(function () {
             this.field('topics', { boost: 30 });
             this.field('content', { boost: 10 });
         });
+
+        data.forEach(function(obj, index) {
+            obj['id'] = index;
+            index.add(obj);
+        });
+
+        console.log(index);
     });
 });
