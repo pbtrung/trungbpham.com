@@ -35,6 +35,11 @@ a:visited {
   color: #f2f2f2;
 }
 
+#menu a.small-print-a {
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
 .post-meta {
   font-size: 90%;
 }
