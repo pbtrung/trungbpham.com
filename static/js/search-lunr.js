@@ -41,6 +41,7 @@ function lunrSearch() {
         var matches = window.index.search(query);
         console.log(query);
         console.log(matches);
+        console.log(window.index);
         displayResults(matches);
     }
 }
