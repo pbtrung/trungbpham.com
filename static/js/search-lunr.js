@@ -44,8 +44,9 @@ $(document).ready(function () {
                 results.innerHTML += str;
             });
         } else {
-            results.innerHTML = '<div class="nothing-found"><h3>No result(s) found. Please click on <a href="/">this link</a> to return to home page or use different search term(s).\
-                                 <br/>Thank you for visiting my blog <i class="fa fa-smile-o fa-lg" aria-hidden="true"></i><h3></div>';
+            results.innerHTML = '<div class="nothing-found"><h3>No result(s) found. Please click on <a href="/">this link</a> \
+                                 to return to home page or use different search term(s).<br/>Thank you for visiting my blog \
+                                 <i class="fa fa-smile-o fa-lg" aria-hidden="true"></i><h3></div>';
         }
     });
 });
