@@ -1,8 +1,7 @@
 // Extract the param value from the URL.
 function paramValue(query_param) {
     var results = new RegExp('[\\?&]' + query_param + '=([^&#]*)').exec(window.location.href);
-    results = results.split('+').join(' ');
-    return results ? results[1] : false;
+    return results ? results[1].split('+').join(' ') : false;
 }
 
 function truncate(title) {
