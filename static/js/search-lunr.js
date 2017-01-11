@@ -13,7 +13,7 @@ $(document).ready(function () {
         var index = lunr(function() {
             this.field('id');
             this.field('href');
-            this.field('title', { boost: 40 });
+            this.field('title', { boost: 100 });
             this.field('tags', { boost: 30 });
             this.field('topics', { boost: 30 });
             this.field('content', { boost: 10 });
@@ -26,13 +26,14 @@ $(document).ready(function () {
 
         var matches = index.search(paramValue('q'));
         if (matches.length) {
+            results.append(matches.length + ' Result(s) Found.<br/><br/>');
             matches.forEach(function(result) {
                 var item = data[result.ref];
                 var appendString = item.title + ' ';
-                results.innerHTML += appendString;
+                results.append(appendString);
             });
         } else {
-            results.innerHTML = 'Nothing';
+            results.innerHTML = 'No result(s) found.';
         }
     });
 });
