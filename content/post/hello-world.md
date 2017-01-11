@@ -1,5 +1,5 @@
 +++
-tags = ["Hello", "Start my blog"
+tags = ["Hello", "Start my blog"]
 date = "2017-01-07T23:46:11-08:00"
 title = "Hello, World!"
 description = ""
