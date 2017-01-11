@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     var searchData;
 
-    var index = lunr(function() {
+    window.index = lunr(function() {
         this.field('id');
         this.field('href');
         this.field('title', { boost: 40 });
@@ -25,7 +25,7 @@ $(document).ready(function () {
             searchData.forEach(function(obj, index) {
                 obj['id'] = index;
                 console.log(obj);
-                index.add(obj);
+                window.index.add(obj);
             });
         } else {
             console.log("Failed status for site-index.json.");
@@ -39,10 +39,10 @@ $(document).ready(function () {
     var query_param = 'q';
     var query = paramValue(query_param);
     if (query.length > 2) {
-        var matches = index.search(query);
+        var matches = window.index.search(query);
         console.log(query);
         console.log(matches);
-        console.log(index);
+        console.log(window.index);
         var searchResults = document.getElementById('search-results');
         if (matches.length) {
             matches.forEach(function(result) {
