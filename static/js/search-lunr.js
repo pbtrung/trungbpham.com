@@ -29,11 +29,12 @@ $(document).ready(function () {
             results.innerHTML = matches.length + ' Result(s) Found.<br/><br/>';
             matches.forEach(function(result) {
                 var item = data[result.ref];
-                var appendString = item.title + ' ';
-                results.innerHTML += appendString;
+                var appendString = item.title;
+                results.innerHTML += appendString1;
             });
         } else {
-            results.innerHTML = 'No result(s) found.';
+            results.innerHTML = '<div class="nothing-found"><h3>No result found. Please click on <a href="/">this link</a> to return to home page or use different search term(s).\
+                                 <br/>Thank you for visiting my blog <i class="fa fa-smile-o fa-lg" aria-hidden="true"></i><h3></div>';
         }
     });
 });
