@@ -27,5 +27,6 @@ $(document).ready(function () {
         });
 
         console.log(index);
+        console.log(index.search('Hello'));
     });
 });
