@@ -18,18 +18,18 @@ $(document).ready(function () {
     
     $.getJSON('/site-index.json', function(data) {
         var results = document.getElementById('search-results');
-        var index = lunr(function() {
-            this.field('id');
-            this.field('href');
-            this.field('title', { boost: 100 });
-            this.field('tags', { boost: 30 });
-            this.field('topics', { boost: 30 });
-            this.field('content', { boost: 10 });
+        var index = elasticlunr(function() {
+            this.addField('id');
+            this.addField('href');
+            this.addField('title', { boost: 100 });
+            this.addField('tags', { boost: 30 });
+            this.addField('topics', { boost: 30 });
+            this.addField('content', { boost: 10 });
         });
 
         data.forEach(function(obj, idx) {
             obj['id'] = idx;
-            index.add(obj);
+            index.addDoc(obj);
         });
 
         var matches = index.search(paramValue('q'));
