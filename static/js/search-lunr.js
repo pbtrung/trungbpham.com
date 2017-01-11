@@ -7,52 +7,18 @@ function paramValue(query_param) {
 $(document).ready(function () {
 
     var searchData;
+    
+    $.getJSON('/site-index.json', function(data) {
+        var results = document.getElementById('search-results');
+        results.append(data.length + ' Result(s) Found.');
 
-    window.index = lunr(function() {
-        this.field('id');
-        this.field('href');
-        this.field('title', { boost: 40 });
-        this.field('tags', { boost: 30 });
-        this.field('topics', { boost: 30 });
-        this.field('content', { boost: 10 });
+        var index = lunr(function() {
+            this.field('id');
+            this.field('href');
+            this.field('title', { boost: 40 });
+            this.field('tags', { boost: 30 });
+            this.field('topics', { boost: 30 });
+            this.field('content', { boost: 10 });
+        });
     });
-    var indexLocation = "/site-index.json";
-    var searchReq = new XMLHttpRequest();
-    searchReq.open('GET', indexLocation, true);
-    searchReq.onload = function() {
-        if (this.status >= 200 && this.status < 400) {
-            searchData = JSON.parse(this.response);
-            searchData.forEach(function(obj, index) {
-                obj['id'] = index;
-                console.log(obj);
-                window.index.add(obj);
-            });
-        } else {
-            console.log("Failed status for site-index.json.");
-        }
-    };
-    searchReq.onerror = function() {
-        console.log("Error when attempting to load site-index.json.");
-    }
-    searchReq.send();
-
-    var query_param = 'q';
-    var query = 'hello';
-    if (query.length > 2) {
-        var matches = window.index.search(query);
-        console.log(query);
-        console.log(matches);
-        console.log(window.index);
-        var searchResults = document.getElementById('search-results');
-        if (matches.length) {
-            matches.forEach(function(result) {
-                var item = searchData[result.ref];
-                var appendString = item.title + ' ';
-                searchResults.innerHTML += appendString;
-            });
-        } else {
-            searchResults.innerHTML = 'No results found';
-        }
-    }
-
 });
