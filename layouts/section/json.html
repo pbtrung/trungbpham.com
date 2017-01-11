@@ -1,0 +1,14 @@
+[{{ range $index, $page := .Site.Pages }}{{ if and (ne $page.Type "json") (ne $page.Section "singletons") (not (hasPrefix $page.Permalink "https://www.trungbpham.com/tags/")) (not (hasPrefix $page.Permalink "https://www.trungbpham.com/topics/")) (not (hasPrefix $page.Permalink "https://www.trungbpham.com/post/")) (not (hasPrefix $page.Permalink "https://www.trungbpham.com/json/")) (not (hasPrefix $page.Permalink "https://www.trungbpham.com/search/")) }}{{ if $index }},{{ end }}
+	{
+		"objectID": {{ $index }},
+	    "href": "{{ $page.Permalink }}",
+	    "title": "{{ $page.Title }}",
+	    "section": "{{ .Section | title }}",
+	    {{ with $page.Params.subtitle}}"subtitle": {{ . | plainify | jsonify }},{{ end }}
+	    "publishDate": {{ $page.PublishDate.Unix }},
+	    "tags": [{{ range $tindex, $tag := $page.Params.tags }}{{ if $tindex }}, {{ end }}"{{ $tag }}"{{ end }}],
+	    "categories": [{{ range $cindex, $category := $page.Params.categories }}{{ if $cindex }}, {{ end }}"{{ $category }}"{{ end }}],
+	    "topics": [{{ range $tindex, $topic := $page.Params.topics }}{{ if $tindex }}, {{ end }}"{{ $topic }}"{{ end }}],
+	    "content":{{ chomp $page.Content | plainify | jsonify }}
+	}{{ end }}{{ end }}
+]
