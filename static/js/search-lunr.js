@@ -14,21 +14,23 @@ function truncate(title) {
 
 $(document).ready(function () {
     
-    $.getJSON('/search-index.json', function(data) {
+    $.getJSON('/search-index.json', function(search_index) {
         var results = document.getElementById('search-results');
-        var index = elasticlunr.Index.load(JSON.parse(JSON.stringify(data)));
+        var index = elasticlunr.Index.load(JSON.parse(JSON.stringify(search_index)));
 
         var matches = index.search(paramValue('q'));
         if (matches.length) {
             results.innerHTML = matches.length + ' Result(s) Found.<br/><br/>';
-            matches.forEach(function(result) {
-                var item = data[result.ref];
-                var str = '<div class="result"><h2 class="search-title"><a href="' + item.href + '">' + item.title + '</a></h2>';
-                str += '<p class="search-link"><a href="' + item.href + '">' + item.href + '</a></p>';
-                str += '<p class="search-summary">' + truncate(item.content) + '</p>';
-                str += '</div>';
-                str += '<br/>';
-                results.innerHTML += str;
+            $.getJSON('/site-index.json', function(site_index) {
+                matches.forEach(function(result) {
+                    var item = site_index[result.ref];
+                    var str = '<div class="result"><h2 class="search-title"><a href="' + item.href + '">' + item.title + '</a></h2>';
+                    str += '<p class="search-link"><a href="' + item.href + '">' + item.href + '</a></p>';
+                    str += '<p class="search-summary">' + truncate(item.content) + '</p>';
+                    str += '</div>';
+                    str += '<br/>';
+                    results.innerHTML += str;
+                });
             });
         } else {
             results.innerHTML = '<div class="nothing-found"><h3>No result(s) found. Please click on <a href="/">this link</a> \
