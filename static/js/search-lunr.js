@@ -16,7 +16,7 @@ $(document).ready(function () {
     
     $.getJSON('/search-index.json', function(data) {
         var results = document.getElementById('search-results');
-        var index = elasticlunr.Index.load(JSON.parse(data));
+        var index = elasticlunr.Index.load(JSON.parse(JSON.stringify(data)));
 
         var matches = index.search(paramValue('q'));
         if (matches.length) {
