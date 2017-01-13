@@ -1,5 +1,5 @@
 var fs = require('fs')
-var site_index = JSON.parse(fs.readFileSync('../../public/site-index.json', 'utf8'));
+var site_index = JSON.parse(fs.readFileSync('./public/site-index.json', 'utf8'));
 
 var elasticlunr = require('elasticlunr');
 
@@ -20,7 +20,7 @@ site_index.forEach(function(obj, idx) {
 
 var search_index = JSON.stringify(index);
 
-fs.writeFile("../../public/search-index.json", search_index, 'utf8', function(err) {
+fs.writeFile("./public/search-index.json", search_index, 'utf8', function(err) {
     if(err) {
         return console.log(err);
     }
