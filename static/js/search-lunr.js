@@ -14,23 +14,34 @@ function truncate(title) {
 
 $(document).ready(function () {
     
-    $.getJSON('/search-index.json', function(search_index) {
+    $.getJSON('/site-index.json', function(data) {
         var results = document.getElementById('search-results');
-        var index = elasticlunr.Index.load(JSON.parse(JSON.stringify(search_index)));
+        var index = elasticlunr(function() {
+            this.addField('id');
+            this.addField('href');
+            this.addField('title', { boost: 100 });
+            this.addField('tags', { boost: 30 });
+            this.addField('topics', { boost: 30 });
+            this.addField('content', { boost: 10 });
+            this.saveDocument(false);
+        });
+
+        data.forEach(function(obj, idx) {
+            obj['id'] = idx;
+            index.addDoc(obj);
+        });
 
         var matches = index.search(paramValue('q'));
         if (matches.length) {
             results.innerHTML = matches.length + ' Result(s) Found.<br/><br/>';
-            $.getJSON('/site-index.json', function(site_index) {
-                matches.forEach(function(result) {
-                    var item = site_index[result.ref];
-                    var str = '<div class="result"><h2 class="search-title"><a href="' + item.href + '">' + item.title + '</a></h2>';
-                    str += '<p class="search-link"><a href="' + item.href + '">' + item.href + '</a></p>';
-                    str += '<p class="search-summary">' + truncate(item.content) + '</p>';
-                    str += '</div>';
-                    str += '<br/>';
-                    results.innerHTML += str;
-                });
+            matches.forEach(function(result) {
+                var item = data[result.ref];
+                var str = '<div class="result"><h2 class="search-title"><a href="' + item.href + '">' + item.title + '</a></h2>';
+                str += '<p class="search-link"><a href="' + item.href + '">' + item.href + '</a></p>';
+                str += '<p class="search-summary">' + truncate(item.content) + '</p>';
+                str += '</div>';
+                str += '<br/>';
+                results.innerHTML += str;
             });
         } else {
             results.innerHTML = '<div class="nothing-found"><h3>No result(s) found. Please click on <a href="/">this link</a> \
