@@ -14,22 +14,9 @@ function truncate(title) {
 
 $(document).ready(function () {
     
-    $.getJSON('/site-index.json', function(data) {
+    $.getJSON('/search-index.json', function(data) {
         var results = document.getElementById('search-results');
-        var index = elasticlunr(function() {
-            this.addField('id');
-            this.addField('href');
-            this.addField('title', { boost: 100 });
-            this.addField('tags', { boost: 30 });
-            this.addField('topics', { boost: 30 });
-            this.addField('content', { boost: 10 });
-            this.saveDocument(false);
-        });
-
-        data.forEach(function(obj, idx) {
-            obj['id'] = idx;
-            index.addDoc(obj);
-        });
+        var index = elasticlunr.Index.load(JSON.parse(data));
 
         var matches = index.search(paramValue('q'));
         if (matches.length) {
